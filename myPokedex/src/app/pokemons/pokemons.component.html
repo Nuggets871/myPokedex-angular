@@ -1,0 +1,8 @@
+<h1>pokemons works!</h1>
+
+<div class="container">
+    <a *ngFor="let pokemon of pokemons" class="btn btn-primary mr-5" routerLink="/detail/{{pokemon.id}}">
+        <span class=" mr-2">{{ pokemon.id }}</span>
+        <span>{{ pokemon.nom }}</span>
+    </a>
+</div>
