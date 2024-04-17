@@ -1,6 +1,23 @@
-<p>pokemon-details works!</p>
+<h1>pokemon-details works!</h1>
 
 
-<div class="container" *ngIf="pokemon">
-    <span>{{ pokemon.name}}</span>
+<div *ngIf="pokemon" class="container d-flex gap-3 flex-wrap justify-content-between align-items-center my-5">
+
+    <div class="card p-3 d-flex align-items-center justify-content-center">
+        <img src={{pokemon.sprites.regular}} alt=" " width="100 " height="100 " class="card-img-top ">
+        <div class="card-body ">
+            <p class="card-text ">#{{ pokemon.pokedex_id }}</p>
+            <p class="card-text ">{{ pokemon.name.fr }}</p>
+            <div class="stats">
+                <p class="card-text ">Stats</p>
+                <p class="card-text ">Atk : {{pokemon.stats.atk}}</p>
+                <p class="card-text ">Def : {{pokemon.stats.def}}</p>
+                <p class="card-text ">Hp : {{pokemon.stats.hp}}</p>
+                <p class="card-text ">Vit : {{pokemon.stats.vit}}</p>
+            </div>
+
+        </div>
+
+    </div>
+
 </div>

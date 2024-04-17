@@ -13,5 +13,16 @@ export interface Pokemon {
         regular: string;
         shiny: string;
     };
-    
+    height: string;
+    weight: string;
+    stats: {
+        atk: number,
+        def: number,
+        hp: number,
+        spe_atk: number,
+        spe_def: number,
+        vit: number,
+    };
+
+
 }
