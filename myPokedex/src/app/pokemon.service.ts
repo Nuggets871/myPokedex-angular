@@ -9,7 +9,8 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class PokemonService {
-  private apiUrl = 'https://pokeapi.co/api/v2/pokemon'
+  private apiUrlPokeAPI = 'https://pokeapi.co/api/v2/pokemon';
+  private apiUrlTyradex = 'https://tyradex.vercel.app/api/v1/gen/1';
 
   constructor(
     private http: HttpClient,
@@ -20,9 +21,9 @@ export class PokemonService {
   }
 
   loadPokemons(): Observable<Pokemon[]> {
-    return this.http.get<{results: Pokemon[]}>(this.apiUrl)
+    return this.http.get< Pokemon[]>(this.apiUrlTyradex)
       .pipe(
-        map(response => response.results)
+        map(response => response)
       )
   }
 

@@ -24,6 +24,7 @@ export class PokemonsComponent implements OnInit {
     this.pokemonService.loadPokemons().subscribe({
       next: (pokemons) => {
         this.pokemons = pokemons
+        console.log("getPokemons bien effectué :", this.pokemons)
       },
       error: (e) => {
         console.error("Erreur lors du getPokemon", e)
