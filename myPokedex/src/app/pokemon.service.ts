@@ -1,21 +1,30 @@
 import { Injectable } from '@angular/core';
 import { POKEMONS } from './mock-pokemons';
 import { Pokemon } from './pokemon';
-import { Observable, of } from 'rxjs';
+import { Observable, of, map } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class PokemonService {
+  private apiUrl = 'https://pokeapi.co/api/v2/pokemon'
 
-  constructor() { }
+  constructor(
+    private http: HttpClient,
+  ) { }
 
-  getPokemons(): Observable<Pokemon[]> {
+  getMockPokemons(): Observable<Pokemon[]> {
     return of(POKEMONS);
   }
 
-  getPokemon(id: number): Observable<Pokemon> {
-    return POKEMONS.filter(p => p.id === id)
+  loadPokemons(): Observable<Pokemon[]> {
+    return this.http.get<{results: Pokemon[]}>(this.apiUrl)
+      .pipe(
+        map(response => response.results)
+      )
   }
 
+  
 }

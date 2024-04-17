@@ -1,8 +1,12 @@
 <h1>pokemons works!</h1>
 
-<div class="container">
-    <a *ngFor="let pokemon of pokemons" class="btn btn-primary mr-5" routerLink="/detail/{{pokemon.id}}">
-        <span class=" mr-2">{{ pokemon.id }}</span>
-        <span>{{ pokemon.nom }}</span>
-    </a>
+<div class="container d-flex gap-3 flex-wrap justify-content-center align">
+    <!-- <a *ngFor="let pokemon of pokemons | json" class="btn btn-primary mr-5" routerLink="/detail/{{pokemon.name}}"> -->
+    <button class="pokemon p-2 m-2 btn btn-primary" *ngFor="let pokemon of pokemons">
+        <span class="text-white">{{ pokemon.name }}</span>
+    </button>
+
+
+    <!-- </a> -->
+    <!-- {{ pokemons | json}} -->
 </div>

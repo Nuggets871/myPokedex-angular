@@ -1,10 +1,10 @@
 import { Pokemon } from "./pokemon";
 
 export const POKEMONS: Pokemon[] = [
-    { id:1, nom: 'Bubilare' },
-    { id:2, nom: 'Herbizare' },
-    { id:3, nom: 'Florizare' },
-    { id:4, nom: 'Salameche' },
-    { id:5, nom: 'Reptincel' },
-    { id:6, nom: 'Dracaufeu' },
+    { id:1, name: 'Bubilare' , url: ''},
+    { id:2, name: 'Herbizare' , url: ''},
+    { id:3, name: 'Florizare', url: '' },
+    { id:4, name: 'Salameche', url: '' },
+    { id:5, name: 'Reptincel', url: '' },
+    { id:6, name: 'Dracaufeu', url: '' },
 ]
